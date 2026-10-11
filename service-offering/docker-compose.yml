@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: serviceOffering-mysql
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: serviceOffering_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+    ports:
+      - "3311:3306"
+
+    volumes:
+      - serviceOffering_mysql_data:/var/lib/mysql
+
+volumes:
+  serviceOffering_mysql_data:
